@@ -54,3 +54,6 @@ class Youth(models.Model):
     def __str__(self):
         return self.first_name
 
+# class YouthAdmin(admin.ModelAdmin):
+#     list_display = ['user', 'first_name', 'last_name', 'birth_date', 'from_city_germany', 'from_city_india', 'phone_number', 'sabha_type']
+#     search_fields = ['first_name', 'last_name', 'from_city_germany', 'from_city_india']

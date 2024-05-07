@@ -12,13 +12,12 @@ class YouthViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication]
     premission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        return self.queryset.filter(user = self.request.user).order_by('-id')
-    
+    #default serialiser class is Detail and for list youth Youth Serialiser is used
+
     def get_serializer_class(self):
         if self.action == 'list':
             return serializers.YouthSerializer
         return self.serializer_class
     
     def perform_create(self, serializer):
-        serializer.save(user = self.request.user)
+        serializer.save()
